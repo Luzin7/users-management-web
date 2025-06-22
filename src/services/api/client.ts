@@ -4,7 +4,7 @@ import { createApiClient } from '../../lib/createApiClient';
 const apiUrl =
   env.VITE_ENV === 'development'
     ? 'http://localhost:8080'
-    : 'not available in production';
+    : env.VITE_API_URL;
 
 export const apiPrivateClient = createApiClient({
   baseURL: apiUrl,
