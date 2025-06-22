@@ -142,23 +142,23 @@ export default function Profile() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-3">
               <User className="text-primary" size={24} />
-              <h1 className="text-xl font-semibold text-gray-900">
+              <h1 className="text-sm md:text-lg font-semibold text-gray-900">
                 Meu Perfil
               </h1>
             </div>
-            <button
-              onClick={async () => {
-                await logout();
-                useUserStore.getState().clearUser();
-                useAuthStore.getState().clearAccessToken();
-                sessionStorage.removeItem("accessToken");
-                toast.success("Você saiu com sucesso!");
-              }}
-              className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <LogOut size={16} />
-              Sair
-            </button>
+              <button
+                onClick={async () => {
+                  await logout();
+                  useUserStore.getState().clearUser();
+                  useAuthStore.getState().clearAccessToken();
+                  sessionStorage.removeItem("accessToken");
+                  toast.success("Você saiu com sucesso!");
+                }}
+                className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-red-600 hover:bg-muted rounded-lg transition-colors"
+              >
+                <LogOut size={16} />
+                Sair
+              </button>
           </div>
         </div>
       </header>
@@ -166,8 +166,8 @@ export default function Profile() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           <div className="bg-gradient-to-r from-primary to-primary-600 px-6 py-8">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row items-center justify-center md:justify-between">
+              <div className="flex flex-col md:flex-row items-center gap-4">
                 <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                   <User size={32} className="text-white" />
                 </div>
@@ -179,7 +179,7 @@ export default function Profile() {
               {!isEditing && (
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-colors"
+                  className="mt-4 md:mt-0 flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg transition-colors"
                 >
                   <Edit size={16} />
                   Editar
