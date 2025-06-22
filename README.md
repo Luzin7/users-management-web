@@ -112,6 +112,13 @@ src/
 
 ## Decisões de Design e Arquitetura
 
+> **Criação do primeiro usuário administrador:**: O enunciado não especifica como deve ser criado o primeiro usuário admin. Por isso, para viabilizar a entrega, implementei a regra de que o primeiro usuário cadastrado será admin e os demais, usuários comuns.
+
+> **Atenção**: Essa decisão é provisória e deve ser validada conforme a necessidade real do projeto. Em um cenário real, o correto seria alinhar esse fluxo com o cliente antes da implementação.
+
+> **Importante:** A criação do primeiro usuário administrador é realizada diretamente no backend.  
+> Consulte o [README do backend](https://github.com/Luzin7/users-management.git) para entender o fluxo de criação inicial e as considerações de segurança adotadas.
+
 - **Separação de responsabilidades:** O frontend foi estruturado em camadas claras, facilitando manutenção e escalabilidade.
 - **Gerenciamento de estado com Zustand:** Escolhido por ser leve, simples e eficiente para o porte do projeto, evitando complexidade desnecessária.
 - **Validação centralizada:** Toda validação de formulários é feita com Zod, garantindo consistência e segurança dos dados.
