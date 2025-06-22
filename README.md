@@ -18,7 +18,6 @@ Sistema completo de gerenciamento de usuários desenvolvida como parte de um tes
 - Busca por nome
 - Ordenação por nome ou data de criação
 - Ações de exclusão de usuários
-- Estatísticas de usuários
 
 ### Perfil do Usuário
 
@@ -140,12 +139,6 @@ O sistema é totalmente responsivo, adaptando-se a diferentes tamanhos de tela.
 - Busca por nome
 - Filtro por tipo e status (todos, admin, user, inativos)
 - Ordenação por nome ou data de criação
-
-### Estatísticas
-
-- Total de usuários
-- Número de administradores
-- Usuários ativos
 
 ### Ações
 
