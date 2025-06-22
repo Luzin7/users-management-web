@@ -119,6 +119,16 @@ export default function Dashboard() {
       return;
     }
 
+    if (userId === user.id) {
+      await logout();
+      useUserStore.getState().clearUser();
+      useAuthStore.getState().clearAccessToken();
+      sessionStorage.removeItem("accessToken");
+      toast.success("Você se removeu");
+      setIsLoading(false);
+      return;
+    }
+
     toast.success("Usuário removido com sucesso");
     setUsers((prev) => prev.filter((u) => u.id !== userId));
     setTotal((prev) => prev - 1);
@@ -157,7 +167,6 @@ export default function Dashboard() {
                   useUserStore.getState().clearUser();
                   useAuthStore.getState().clearAccessToken();
                   sessionStorage.removeItem("accessToken");
-                  toast.success("Você saiu com sucesso!");
                 }}
                 className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-red-600 hover:bg-muted rounded-lg transition-colors"
               >
@@ -217,19 +226,19 @@ export default function Dashboard() {
             <h2 className="text-lg font-medium text-gray-900">
               Usuários ({total})
             </h2>
-              <div
-                    className="p-2 text-left text-xs font-medium rounded-lg text-muted-foreground uppercase tracking-wider cursor-pointer hover:bg-gray-100 md:hidden"
-                    onClick={() => toggleSort("createdAt")}
-                  >
-                    <div className="flex items-center gap-2">
-                      Data de Criação
-                      {sortBy === "createdAt" &&
-                        (sortOrder === "asc" ? (
-                          <SortAsc size={14} />
-                        ) : (
-                          <SortDesc size={14} />
-                        ))}
-                    </div>
+            <div
+              className="p-2 text-left text-xs font-medium rounded-lg text-muted-foreground uppercase tracking-wider cursor-pointer hover:bg-gray-100 md:hidden"
+              onClick={() => toggleSort("createdAt")}
+            >
+              <div className="flex items-center gap-2">
+                Data de Criação
+                {sortBy === "createdAt" &&
+                  (sortOrder === "asc" ? (
+                    <SortAsc size={14} />
+                  ) : (
+                    <SortDesc size={14} />
+                  ))}
+              </div>
             </div>
           </div>
           <div className="md:hidden">
