@@ -152,7 +152,6 @@ export default function Profile() {
                   useUserStore.getState().clearUser();
                   useAuthStore.getState().clearAccessToken();
                   sessionStorage.removeItem("accessToken");
-                  toast.success("Você saiu com sucesso!");
                 }}
                 className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-red-600 hover:bg-muted rounded-lg transition-colors"
               >
