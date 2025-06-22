@@ -65,7 +65,7 @@ export async function login({
 
 export async function me(): Promise<Result<User, AxiosError>> {
   try {
-    const { data } = await apiPrivateClient.get("/me");
+    const { data } = await apiPrivateClient.get("/users/me");
     return ok(data);
   } catch (error) {
     return fail(error as AxiosError);
@@ -109,7 +109,7 @@ export async function updateUserPassword(
   password: string
 ): Promise<Result<NoReturn, AxiosError>> {
   try {
-    await apiPrivateClient.patch("/users/me/password", {
+    await apiPrivateClient.patch("/users/password", {
       password,
     });
 
@@ -213,7 +213,7 @@ export async function deleteUser(
 
 export async function logout(): Promise<Result<void, AxiosError>> {
   try {
-    await apiPublicClient.post("/logout");
+    await apiPublicClient.post("/auth/logout");
   } catch (error) {
     return fail(error as AxiosError);
   }
