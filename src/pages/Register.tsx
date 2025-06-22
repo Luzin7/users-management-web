@@ -69,7 +69,7 @@ export default function Register() {
       return;
     }
 
-    toast.success("Conta criada com sucesso! Faça login para continuar.");
+    toast.success("Conta criada! Faça login para continuar.");
 
     navigate("/login");
   };
