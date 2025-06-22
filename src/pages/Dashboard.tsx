@@ -140,7 +140,7 @@ export default function Dashboard() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
               <Users className="text-primary" size={24} />
-              <h1 className="hidden text-sm font-semibold text-gray-900 md:block">
+              <h1 className="hidden text-sm md:text-lg font-semibold text-gray-900 md:block">
                 Dashboard Admin
               </h1>
               <h1 className="text-sm font-semibold text-gray-900 md:hidden">
