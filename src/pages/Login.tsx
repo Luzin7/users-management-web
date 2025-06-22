@@ -73,7 +73,6 @@ export default function Login() {
     });
     useAuthStore.getState().setAccessToken(response.data.access_token);
     sessionStorage.setItem("accessToken", response.data.access_token);
-    toast.success("Login realizado com sucesso!");
     navigate(from, { replace: true });
   };
 
