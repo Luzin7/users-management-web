@@ -1,6 +1,6 @@
 # Sistema de Gerenciamento de Usuários
 
-Sistema completo de gerenciamento de usuários desenvolvida como parte de um teste técnico para a Conéctar em ReactJS com TypeScript, integrado a um [backend NestJS](https://github.com/Luzin7/users-management.git) via API REST com autenticação JWT.
+Sistema completo de gerenciamento de usuários desenvolvida como parte de um teste técnico em ReactJS com TypeScript, integrado a um [backend NestJS](https://github.com/Luzin7/users-management.git) via API REST com autenticação JWT.
 
 ## 🚀 Funcionalidades
 
